@@ -14,7 +14,13 @@ int	main()
 		if (input == "ADD")
 		{
 			count++;
-			pb.AddInfo(count - 1);
+			if (count > 8)
+			{
+				std::cout << "You can add up to 8 information on this phone book. You can not add anymore." << std::endl;
+				count = 8;
+			}
+			else
+				pb.AddInfo(count - 1);
 		}
 		else if (input == "SEARCH")
 			pb.SearchInfo(count);
