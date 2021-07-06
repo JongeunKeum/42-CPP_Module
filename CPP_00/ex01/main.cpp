@@ -15,18 +15,23 @@ int	main()
 		{
 			count++;
 			if (count > 8)
-			{
-				std::cout << "You can add up to 8 information on this phone book. You can not add anymore." << std::endl;
-				count = 8;
-			}
+				pb.AddInfo((count - 1) % 8);
 			else
 				pb.AddInfo(count - 1);
 		}
 		else if (input == "SEARCH")
-			pb.SearchInfo(count);
+		{
+			if (count > 8)
+				pb.SearchInfo(8);
+			else
+				pb.SearchInfo(count);
+		}
 		else if (input == "EXIT")
 		{
-			pb.ExitDelete(count);
+			if (count > 8)
+				pb.ExitDelete(8);
+			else
+				pb.ExitDelete(count);
 			break ;
 		}
 		else

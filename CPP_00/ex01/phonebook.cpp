@@ -48,11 +48,6 @@ void	Phonebook::SearchInfo(int count)
 		std::cout << "Please enter only a number between 1 and 8." << std::endl;
 		return ;
 	}
-	else if (index > count)
-	{
-		std::cout << "There is no information in the index " << index << "." << std::endl;
-		return ;
-	}
 	index--;
 	std::cout << "1. First Name\t\t: " << firstName[index] << std::endl;
 	std::cout << "2. Last Name\t\t: " << lastName[index] << std::endl;
