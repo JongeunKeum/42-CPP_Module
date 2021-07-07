@@ -9,8 +9,6 @@ SRCS =	./main.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
-vpath %.cpp $(SRCS_DIR)
-
 RM = rm -f
 
 all : $(NAME)

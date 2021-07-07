@@ -5,15 +5,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 OBJS_DIR = ./objs
 
-INCS = ./Zombie.hpp
-
 SRCS =	./main.cpp		\
 		./Zombie.cpp	\
 		./ZombieHorde.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
-
-vpath %.cpp $(SRCS_DIR)
 
 RM = rm -f
 
@@ -26,7 +22,7 @@ $(OBJS_DIR) :
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o : %.cpp | $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -o $@ -I./$(INCS) -c $^
+	@$(CC) $(CFLAGS) -o $@ -c $^
 
 clean :
 	@$(RM) -r $(OBJS_DIR)
