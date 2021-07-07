@@ -1,4 +1,4 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = brainz
 
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
