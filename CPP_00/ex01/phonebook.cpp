@@ -42,6 +42,8 @@ void	Phonebook::SearchInfo(int count)
 	std::string	idx;
 	std::cout << "\nPlease enter the number : ";
 	getline(std::cin, idx);
+	if (std::cin.eof())
+		exit(1);
 	index = atoi(idx.c_str());
 	if (index <= 0 || index > 8)
 	{

@@ -11,6 +11,8 @@ int	main()
 	{
 		std::cout << "\nEnter the command(ADD / SEARCH / EXIT) : ";
 		getline(std::cin, input);
+		if (std::cin.eof())
+			break ;
 		if (input == "ADD")
 		{
 			count++;
