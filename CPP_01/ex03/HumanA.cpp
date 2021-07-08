@@ -3,7 +3,6 @@
 HumanA::HumanA(std::string name, Weapon& wp):wp(wp)
 {
 	this->name = name;
-	// this->wp = wp;
 }
 
 void	HumanA::attack()
