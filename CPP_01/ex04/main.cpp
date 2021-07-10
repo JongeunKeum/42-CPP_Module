@@ -45,10 +45,10 @@ int	main(int argc, char **argv)
 	while (file)
 	{
 		getline(file, line);
-		idx = -1;
+		idx = 0;
 		while (true)
 		{
-			idx = line.find(s1, idx + 1);
+			idx = line.find(s1, idx);
 			if (idx == -1)
 			{
 				replaceFile << line;
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 			}
 			else
 			{
-				line = line.insert(idx, s2).erase(idx + s1.length(), s1.length());
+				line = line.insert(idx, s2).erase(idx + s2.length(), s1.length());
 				idx += s2.length();
 			}
 		}
