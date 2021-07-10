@@ -22,11 +22,18 @@ void	Karen::error(void)
 
 void	Karen::complain(std::string level)
 {
-	std::string	levelArray[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-	void	(Karen::*levelFunc[4])() = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
-	for (int i = 0; i < 4; i++)
-	{
-		if (!level.compare(levelArray[i]))
-			(this->*levelFunc[i])();
-	}
+	// std::string	levelArray[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+	// void	(Karen::*levelFunc[4])() = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
+	// for (int i = 0; i < 4; i++)
+	// {
+	// 	if (!level.compare(levelArray[i]))
+	// 		(this->*levelFunc[i])();
+	// }
+	void	(Karen::*levelFunc)();
+
+	(!level.compare("DEBUG") && (levelFunc = &Karen::debug));
+	(!level.compare("INFO") && (levelFunc = &Karen::info));
+	(!level.compare("WARNING") && (levelFunc = &Karen::warning));
+	(!level.compare("ERROR") && (levelFunc = &Karen::error));
+	(this->*levelFunc) ();
 }
