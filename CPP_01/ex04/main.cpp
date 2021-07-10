@@ -9,10 +9,20 @@ int	main(int argc, char **argv)
 		std::cout << "Too many arguments!!" << std::endl;
 		return (1);
 	}
+	else if (argc < 4)
+	{
+		std::cout << "Too few arguments!!" << std::endl;
+		return (1);
+	}
 	std::ifstream	file(argv[1]);
 	if (!file.is_open())
 	{
 		std::cout << "Cannot open the file!!" << std::endl;
+		return (1);
+	}
+	else if (file.peek() == EOF)
+	{
+		std::cout << "Empty file!!" << std::endl;
 		return (1);
 	}
 	std::string	line;
