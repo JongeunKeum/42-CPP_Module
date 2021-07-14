@@ -5,10 +5,10 @@ ScavTrap::ScavTrap()
 	std::cout << "ScavTrap : Default Constructor" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string _name)
 {
 	std::cout << "ScavTrap : Constructor - name" << std::endl;
-	this->setName(name);
+	this->setName(_name);
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(20);
