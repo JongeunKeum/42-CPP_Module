@@ -23,11 +23,7 @@ ScavTrap::ScavTrap(const ScavTrap& copy)
 ScavTrap& ScavTrap::operator=(const ScavTrap& copy)
 {
 	std::cout << "ScavTrap : Assignation Operator" << std::endl;
-	// *this = copy;
-	this->setName(copy.getName());
-	this->setHitPoints(copy.getHitPoints());
-	this->setEnergyPoints(copy.getHitPoints());
-	this->setAttackDamage(copy.getAttackDamage());
+	this->ClapTrap::operator=(copy);
 	return (*this);
 }
 

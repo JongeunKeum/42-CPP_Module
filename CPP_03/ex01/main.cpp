@@ -3,12 +3,14 @@
 int main()
 {
 	ScavTrap jkeum("jkeum");
-	ScavTrap hyunlee;
+	ScavTrap hyunlee("hyunlee");
+	ScavTrap me;
 
-	hyunlee = jkeum;
-	hyunlee.attack("jkeum");
-	hyunlee.takeDamage(10);
+	me = jkeum;
+	me.setAttackDamage(20);
+	me.attack(hyunlee.getName());
+	hyunlee.takeDamage(me.getAttackDamage());
 	hyunlee.beRepaired(10);
-	hyunlee.guardGate();
+	me.guardGate();
 	return (0);
 }
