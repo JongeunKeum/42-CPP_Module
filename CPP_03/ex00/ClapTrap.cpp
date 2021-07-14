@@ -40,7 +40,7 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(std::string const & target)
 {
-	std::cout << "⚔  ClapTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!!!" << std::endl;
+	std::cout << "⚔  " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!!!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
