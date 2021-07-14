@@ -1,11 +1,14 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap jkeum("jkeum");
+	ScavTrap jkeum("jkeum");
+	ScavTrap hyunlee;
 
-	jkeum.attack("hyunlee");
-	jkeum.takeDamage(20);
-	jkeum.beRepaired(10);
+	hyunlee = jkeum;
+	hyunlee.attack("jkeum");
+	hyunlee.takeDamage(10);
+	hyunlee.beRepaired(10);
+	hyunlee.guardGate();
 	return (0);
 }
