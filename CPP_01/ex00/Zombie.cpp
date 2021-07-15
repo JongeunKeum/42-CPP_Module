@@ -1,5 +1,10 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie()
+{
+	std::cout << "Default Contructor called." << std::endl;
+}
+
 Zombie::Zombie(std::string _name)
 {
 	name = _name;
