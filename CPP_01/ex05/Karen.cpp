@@ -20,17 +20,16 @@ void	Karen::error(void)
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
+void	Karen::nothing(void)
+{
+	std::cout << "Wrong Input" << std::endl;
+}
+
 void	Karen::complain(std::string level)
 {
-	// std::string	levelArray[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-	// void	(Karen::*levelFunc[4])() = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
-	// for (int i = 0; i < 4; i++)
-	// {
-	// 	if (!level.compare(levelArray[i]))
-	// 		(this->*levelFunc[i])();
-	// }
 	void	(Karen::*levelFunc)();
 
+	levelFunc = &Karen::nothing;
 	(!level.compare("DEBUG") && (levelFunc = &Karen::debug));
 	(!level.compare("INFO") && (levelFunc = &Karen::info));
 	(!level.compare("WARNING") && (levelFunc = &Karen::warning));
