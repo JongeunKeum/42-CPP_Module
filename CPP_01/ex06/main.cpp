@@ -5,31 +5,30 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	std::string	level = argv[1];
-	std::string	levelArray[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	int	i;
 	Karen	karen;
-	for (i = 0; i < 4; i++)
-	{
-		if (!level.compare(levelArray[i]))
-			break ;
-	}
+	i = -1;
+	(!level.compare("DEBUG") && (i = 0));
+	(!level.compare("INFO") && (i = 1));
+	(!level.compare("WARNING") && (i = 2));
+	(!level.compare("ERROR") && (i = 3));
 	switch (i)
 	{
 	case 0:
-		std::cout << "[ " << levelArray[0] << " ]" << std::endl;
-		karen.complain(levelArray[0]);
+		std::cout << "[ DEBUG ]" << std::endl;
+		karen.complain("DEBUG");
 		std::cout << std::endl;
 	case 1:
-		std::cout << "[ " << levelArray[1] << " ]" << std::endl;
-		karen.complain(levelArray[1]);
+		std::cout << "[ INFO ]" << std::endl;
+		karen.complain("INFO");
 		std::cout << std::endl;
 	case 2:
-		std::cout << "[ " << levelArray[2] << " ]" << std::endl;
-		karen.complain(levelArray[2]);
+		std::cout << "[ WARNING ]" << std::endl;
+		karen.complain("WARNING");
 		std::cout << std::endl;
 	case 3:
-		std::cout << "[ " << levelArray[3] << " ]" << std::endl;
-		karen.complain(levelArray[3]);
+		std::cout << "[ ERROR ]" << std::endl;
+		karen.complain("ERROR");
 		break ;
 	default:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
