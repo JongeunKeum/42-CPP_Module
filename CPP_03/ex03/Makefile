@@ -1,7 +1,7 @@
 NAME = diamondtrap
 
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 
 OBJS_DIR = ./objs
 
