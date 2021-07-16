@@ -32,7 +32,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap Destructor" << std::endl;
 }
 
-void ScavTrap::attack(std::string const& target)
+void ScavTrap::attack(std::string const & target)
 {
 	std::cout << "⚔  ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!!!" << std::endl;
 }
