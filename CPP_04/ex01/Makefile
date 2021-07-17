@@ -1,4 +1,4 @@
-NAME = sorcerer
+NAME = wasteland
 
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror

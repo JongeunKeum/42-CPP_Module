@@ -44,10 +44,10 @@ void Character::attack(Enemy* enemy)
 		if (this->actionPoints >= this->aWP->getAPCost())
 		{
 			this->actionPoints -= this->aWP->getAPCost();
-			this->aWP->attack();
 			std::cout << this->name << " attacks " << enemy->getType() << " with a " << this->aWP->getName() << std::endl;
+			this->aWP->attack();
 			enemy->takeDamage(this->aWP->getDamage());
-			if (enemy->getHP() <= 0)
+			if (enemy->getHP() == 0)
 				delete enemy;
 		}
 	}
@@ -71,7 +71,7 @@ AWeapon const * Character::getWP() const
 std::ostream& operator<<(std::ostream& out, const Character& src)
 {
 	if (src.getWP() == NULL)
-		out << src.getName() << " has " << src.getAP() << " and is unarmed" << std::endl;
+		out << src.getName() << " has " << src.getAP() << " AP and is unarmed" << std::endl;
 	else
 		out << src.getName() << " has " << src.getAP() << " AP and wields a " << src.getWP()->getName() << std::endl;
 	return out;

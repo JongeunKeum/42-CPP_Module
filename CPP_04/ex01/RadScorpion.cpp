@@ -14,6 +14,7 @@ RadScorpion& RadScorpion::operator=(const RadScorpion& copy)
 {
 	this->hitPoints = copy.getHP();
 	this->type = copy.getType();
+	return *this;
 }
 
 RadScorpion::~RadScorpion()

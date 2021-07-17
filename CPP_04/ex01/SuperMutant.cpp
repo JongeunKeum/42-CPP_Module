@@ -14,6 +14,7 @@ SuperMutant& SuperMutant::operator=(const SuperMutant& copy)
 {
 	this->hitPoints = copy.getHP();
 	this->type = copy.getType();
+	return *this;
 }
 
 SuperMutant::~SuperMutant()
@@ -24,5 +25,7 @@ SuperMutant::~SuperMutant()
 void SuperMutant::takeDamage(int amount)
 {
 	if (amount > 3)
-		Enemy::takeDamage(amount);
+		Enemy::takeDamage(amount - 3);
+	else
+		this->hitPoints = 0;
 }
