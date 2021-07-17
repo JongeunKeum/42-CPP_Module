@@ -33,12 +33,12 @@ Fixed& Fixed::operator=(const Fixed& fixed)
 
 bool Fixed::operator==(const Fixed& src) const
 {
-	return (this->fixedValue == src.fixedValue && this->fractionalBits == src.fractionalBits);
+	return (this->fixedValue == src.fixedValue);
 }
 
 bool Fixed::operator!=(const Fixed& src) const
 {
-	return (this->fixedValue != src.fixedValue || this->fractionalBits != src.fractionalBits);
+	return (this->fixedValue != src.fixedValue);
 }
 
 bool Fixed::operator>(const Fixed& src) const
