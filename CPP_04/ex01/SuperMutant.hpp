@@ -9,7 +9,7 @@ public:
 	SuperMutant();
 	SuperMutant(const SuperMutant& copy);
 	SuperMutant& operator=(const SuperMutant& copy);
-	~SuperMutant();
+	virtual ~SuperMutant();
 	void takeDamage(int);
 };
 

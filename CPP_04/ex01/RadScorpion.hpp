@@ -9,7 +9,7 @@ public:
 	RadScorpion();
 	RadScorpion(const RadScorpion& copy);
 	RadScorpion& operator=(const RadScorpion& copy);
-	~RadScorpion();
+	virtual ~RadScorpion();
 	//void takeDamage(int);
 };
 
