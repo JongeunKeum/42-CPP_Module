@@ -5,8 +5,6 @@
 
 class TacticalMarine : public ISpaceMarine
 {
-private:
-
 public:
 	TacticalMarine();
 	TacticalMarine(const TacticalMarine& copy);

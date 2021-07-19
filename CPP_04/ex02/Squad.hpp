@@ -7,6 +7,7 @@ class Squad : public ISquad
 {
 private:
 	int count;
+	ISpaceMarine** member;
 public:
 	Squad();
 	Squad(const Squad& copy);

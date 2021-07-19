@@ -5,8 +5,6 @@
 
 class AssaultTerminator : public ISpaceMarine
 {
-private:
-
 public:
 	AssaultTerminator();
 	AssaultTerminator(const AssaultTerminator& copy);
