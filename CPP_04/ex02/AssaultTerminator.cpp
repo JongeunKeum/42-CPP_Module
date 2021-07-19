@@ -18,15 +18,12 @@ AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator& copy)
 
 AssaultTerminator::~AssaultTerminator()
 {
-	std::cout << "I’ll be back..." << std::endl;
+	std::cout << "I'll be back..." << std::endl;
 }
 
 ISpaceMarine* AssaultTerminator::clone() const
 {
-	AssaultTerminator* copy = new AssaultTerminator;
-	ISpaceMarine* ret;
-
-	ret = copy;
+	ISpaceMarine* ret = new AssaultTerminator;
 	return ret;
 }
 

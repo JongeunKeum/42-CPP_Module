@@ -24,7 +24,12 @@ Squad& Squad::operator=(const Squad& copy)
 
 Squad::~Squad()
 {
-
+	if (this->member != NULL)
+	{
+		for (int i = 0; i < this->count; i++)
+			delete this->member[i];
+		delete[] this->member;
+	}
 }
 
 int Squad::getCount() const
