@@ -10,10 +10,9 @@ TacticalMarine::TacticalMarine(const TacticalMarine& copy)
 	*this = copy;
 }
 
-TacticalMarine& TacticalMarine::operator=(const TacticalMarine& copy)
+TacticalMarine& TacticalMarine::operator=(const TacticalMarine&)
 {
-	(void)copy;
-	return (*this);
+	return *this;
 }
 
 TacticalMarine::~TacticalMarine()
@@ -23,10 +22,7 @@ TacticalMarine::~TacticalMarine()
 
 ISpaceMarine* TacticalMarine::clone() const
 {
-	TacticalMarine* copy = new TacticalMarine;
-	ISpaceMarine* ret;
-
-	ret = copy;
+	ISpaceMarine* ret = new TacticalMarine;
 	return ret;
 }
 

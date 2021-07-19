@@ -10,10 +10,9 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator& copy)
 	*this = copy;
 }
 
-AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator& copy)
+AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator&)
 {
-	(void)copy;
-	return (*this);
+	return *this;
 }
 
 AssaultTerminator::~AssaultTerminator()

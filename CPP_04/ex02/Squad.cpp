@@ -8,14 +8,16 @@ Squad::Squad()
 
 Squad::Squad(const Squad& copy)
 {
-	*this = copy;
+	this->count = copy.count;
+	this->member = new ISpaceMarine*[copy.count];
+	for (int i = 0; i < copy.count; i++)
+		this->member[i] = copy.member[i]->clone();
 }
 
 Squad& Squad::operator=(const Squad& copy)
 {
+	Squad::~Squad();
 	this->count = copy.count;
-	if (this->member != NULL)
-		delete[] this->member;
 	this->member = new ISpaceMarine*[copy.count];
 	for (int i = 0; i < copy.count; i++)
 		this->member[i] = copy.member[i]->clone();
@@ -53,8 +55,8 @@ int Squad::push(ISpaceMarine* unit)
 	for (int i = 0; i < this->count; i++)
 		tmp[i] = this->member[i];
 	tmp[this->count] = unit;
-	this->count++;
 	delete[] this->member;
+	this->count++;
 	this->member = tmp;
 	return this->count;
 }
