@@ -56,6 +56,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4 && this->_materia[idx] != NULL)
 		this->_materia[idx]->use(target);
 }
