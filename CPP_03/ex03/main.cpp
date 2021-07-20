@@ -10,6 +10,9 @@ int main()
 	me.attack(hyunlee.getName());
 	hyunlee.takeDamage(me.getAttackDamage());
 	hyunlee.beRepaired(10);
+	me.guardGate();
+	me.highFivesGuys();
 	me.whoAmI();
+	hyunlee.whoAmI();
 	return (0);
 }

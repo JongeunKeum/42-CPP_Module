@@ -8,7 +8,7 @@ DiamondTrap::DiamondTrap()
 	this->attackDamage = FragTrap::attackDamage;
 }
 
-DiamondTrap::DiamondTrap(std::string _name)
+DiamondTrap::DiamondTrap(std::string _name): ClapTrap::ClapTrap(_name), ScavTrap::ScavTrap(_name), FragTrap::FragTrap(_name)
 {
 	std::cout << "DiamondTrap Constructor - name" << std::endl;
 	this->name = _name;
@@ -39,6 +39,6 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap name is " << this->name << std::endl;
-	std::cout << "ClapTrap name is " << ClapTrap::name << std::endl;
+	std::cout << "♦️  DiamondTrap name is " << this->name << std::endl;
+	std::cout << "👏 ClapTrap name is " << ClapTrap::name << std::endl;
 }
