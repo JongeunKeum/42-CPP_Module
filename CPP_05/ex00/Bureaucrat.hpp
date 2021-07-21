@@ -23,7 +23,7 @@ public:
 	};
 
 private:
-	std::string name;
+	std::string const name;
 	int grade;
 	Bureaucrat() {}
 
