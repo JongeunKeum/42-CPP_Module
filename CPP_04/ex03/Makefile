@@ -19,13 +19,13 @@ RM = rm -f
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJS_DIR) :
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o : %.cpp | $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -o $@ -c $^
+	$(CC) $(CFLAGS) -o $@ -c $^
 
 clean :
 	@$(RM) -r $(OBJS_DIR)
