@@ -24,6 +24,11 @@ int main()
 		std::cout << "-----------------------------\n" << std::endl;
 
 		for (int i = 0; i < 10; ++i)
+			Animals[i]->makeSound();
+
+		std::cout << "\n-----------------------------\n" << std::endl;
+
+		for (int i = 0; i < 10; ++i)
 		{
 			delete Animals[i];
 		}
