@@ -8,7 +8,9 @@ OBJS_DIR = ./objs
 SRCS =	main.cpp	\
 		Animal.cpp	\
 		Cat.cpp		\
-		Dog.cpp
+		Dog.cpp		\
+		WrongAnimal.cpp	\
+		WrongCat.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
@@ -17,13 +19,13 @@ RM = rm -f
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJS_DIR) :
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o : %.cpp | $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -o $@ -c $^
+	$(CC) $(CFLAGS) -o $@ -c $^
 
 clean :
 	@$(RM) -r $(OBJS_DIR)
