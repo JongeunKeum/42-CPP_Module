@@ -10,10 +10,11 @@ private:
 
 public:
 	Brain();
-	Brain(Brain const &copy);
-	Brain& operator=(Brain const &copy);
+	Brain(Brain const & copy);
+	Brain& operator=(Brain const & copy);
 	~Brain();
 	std::string const & getIdea(int index) const;
+	void setIdea(int index);
 };
 
 #endif

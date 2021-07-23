@@ -15,9 +15,16 @@ int main()
 		}
 
 		std::cout << "\n-----------------------------" << std::endl;
-		Animal *copy = Animals[4];
+		Animal* copy = new Dog(*(Dog *)Animals[4]);
 		for (int i = 0; i < 100; ++i)
 		{
+			std::cout << ((Dog*)copy)->getBrain()->getIdea(i) << "    ";
+			std::cout << ((Dog*)Animals[4])->getBrain()->getIdea(i) << std::endl;
+		}
+		std::cout << "-----------------------------\n" << std::endl;
+
+		for (int i = 0; i < 100; ++i) {
+			((Dog *)copy)->getBrain()->setIdea(i);
 			std::cout << ((Dog *)copy)->getBrain()->getIdea(i) << "    ";
 			std::cout << ((Dog *)Animals[4])->getBrain()->getIdea(i) << std::endl;
 		}
@@ -32,6 +39,7 @@ int main()
 		{
 			delete Animals[i];
 		}
+		delete copy;
 	}
 	system("leaks brain_animal");
 }
