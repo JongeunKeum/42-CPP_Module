@@ -14,7 +14,6 @@ public:
 	Cure& operator=(const Cure& copy);
 	virtual ~Cure() {}
 	std::string const & getType() const;
-	unsigned int getXP() const;
 	virtual AMateria* clone() const;
 	virtual void use(ICharacter& target);
 };

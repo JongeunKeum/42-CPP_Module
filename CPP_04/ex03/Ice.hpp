@@ -14,7 +14,6 @@ public:
 	Ice& operator=(const Ice& copy);
 	virtual ~Ice() {}
 	std::string const & getType() const;
-	unsigned int getXP() const;
 	virtual AMateria* clone() const;
 	virtual void use(ICharacter& target);
 };

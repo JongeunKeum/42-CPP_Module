@@ -28,11 +28,6 @@ std::string const & AMateria::getType() const
 	return this->_type;
 }
 
-unsigned int AMateria::getXP() const
-{
-	return this->_xp;
-}
-
 void AMateria::use(ICharacter&)
 {
 	this->_xp += 10;

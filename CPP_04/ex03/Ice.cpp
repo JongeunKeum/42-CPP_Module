@@ -12,11 +12,6 @@ std::string const & Ice::getType() const
 	return this->_type;
 }
 
-unsigned int Ice::getXP() const
-{
-	return this->_xp;
-}
-
 AMateria* Ice::clone() const
 {
 	return new Ice();

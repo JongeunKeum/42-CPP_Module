@@ -12,11 +12,6 @@ std::string const & Cure::getType() const
 	return this->_type;
 }
 
-unsigned int Cure::getXP() const
-{
-	return this->_xp;
-}
-
 AMateria* Cure::clone() const
 {
 	return new Cure();
