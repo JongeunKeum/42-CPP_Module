@@ -9,7 +9,7 @@ private:
 	std::string target;
 
 public:
-	RobotomyRequestForm(): Form("RobotomyRequestForm", 0, 72, 45) {}
+	RobotomyRequestForm(): Form("Robotomy Request Form", 0, 72, 45) {}
 	RobotomyRequestForm(std::string _target);
 	RobotomyRequestForm(const RobotomyRequestForm& copy);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& copy);

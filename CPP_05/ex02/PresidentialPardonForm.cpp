@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string _target): Form("PresidentialPardonForm", 0, 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string _target): Form("Presidential Pardon Form", 0, 25, 5) {
 	target = _target;
 }
 

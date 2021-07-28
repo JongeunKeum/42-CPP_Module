@@ -1,7 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
 
-RobotomyRequestForm::RobotomyRequestForm(std::string _target): Form("RobotomyRequestForm", 0, 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(std::string _target): Form("Robotomy Request Form", 0, 72, 45) {
 	target = _target;
 }
 
