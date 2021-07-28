@@ -27,7 +27,7 @@ private:
 	bool isSigned;
 	int const signGrade;
 	int const execGrade;
-	Form(): signGrade(0), execGrade(0) {}
+	Form(): isSigned(false), signGrade(0), execGrade(0) {}
 
 public:
 	Form(std::string _name, bool _isSigned, int _sign, int _exec);
