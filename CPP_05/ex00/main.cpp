@@ -54,6 +54,8 @@ int main() {
 	delete jkeum;
 	delete jokeum;
 
+	std::cout << "------------------------" << std::endl;
+
 	system("leaks bureaucrat");
 
 	return 0;
