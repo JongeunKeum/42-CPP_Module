@@ -43,9 +43,9 @@ void MateriaSource::learnMateria(AMateria* m)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	if (type != "ice" && type != "cure")
-		return NULL;
+		return 0;
 	for (int i = 0; i < 4; i++)
 		if (this->_materia[i] && !this->_materia[i]->getType().compare(type))
 			return this->_materia[i]->clone();
-	return NULL;
+	return 0;
 }

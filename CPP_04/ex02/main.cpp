@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -14,13 +13,6 @@ int main()
 				Animals[i] = new Cat();
 		}
 
-		std::cout << "\n-----------------------------" << std::endl;
-		Animal *copy = Animals[4];
-		for (int i = 0; i < 100; ++i)
-		{
-			std::cout << ((Dog *)copy)->getBrain()->getIdea(i) << "    ";
-			std::cout << ((Dog *)Animals[4])->getBrain()->getIdea(i) << std::endl;
-		}
 		std::cout << "-----------------------------\n" << std::endl;
 
 		for (int i = 0; i < 10; ++i)
@@ -32,6 +24,20 @@ int main()
 		{
 			delete Animals[i];
 		}
+	}
+	{
+		std::cout << "\n-----------------------------\n" << std::endl;
+
+		// Animal animals = new Animal[10];
+		// Animal* animals = new Animal();
+		Dog* dog = new Dog();
+		Cat* cat = new Cat();
+
+		dog->makeSound();
+		cat->makeSound();
+
+		delete dog;
+		delete cat;
 	}
 	system("leaks abstract");
 }

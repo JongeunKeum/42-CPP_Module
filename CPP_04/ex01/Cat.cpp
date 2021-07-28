@@ -7,12 +7,12 @@ Cat::Cat()
 	this->brain = new Brain();
 }
 
-Cat::Cat(Cat const &copy): Animal(copy)
+Cat::Cat(const Cat& copy): Animal(copy)
 {
 	this->brain = new Brain(*copy.getBrain());
 }
 
-Cat &Cat::operator=(Cat const &copy)
+Cat &Cat::operator=(const Cat& copy)
 {
 	if (this != &copy)
 	{

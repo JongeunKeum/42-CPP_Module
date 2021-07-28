@@ -30,13 +30,13 @@ Brain::Brain()
 	std::cout << std::endl;
 }
 
-Brain::Brain(Brain const &copy)
+Brain::Brain(Brain const & copy)
 {
 	for (int i = 0; i < 100; ++i)
 		this->ideas[i] = copy.getIdea(i);
 }
 
-Brain &Brain::operator=(Brain const &copy)
+Brain &Brain::operator=(Brain const & copy)
 {
 	if (this != &copy) {
 		for (int i = 0; i < 100; ++i)
@@ -59,4 +59,28 @@ Brain::~Brain()
 std::string const &Brain::getIdea(int index) const
 {
 	return this->ideas[index];
+}
+
+void Brain::setIdea(int index) {
+	const std::string other[] = {
+		"💖",
+		"🧡",
+		"💛",
+		"💚",
+		"💙",
+		"💜",
+		"🤎",
+		"🖤",
+		"🤍",
+		"💗",
+		"💘",
+		"💝",
+		"💓",
+		"💞",
+		"💕",
+		"💟",
+		"💌",
+		"💔",
+	};
+	this->ideas[index] = other[rand() % (sizeof(other) / sizeof(std::string))];
 }

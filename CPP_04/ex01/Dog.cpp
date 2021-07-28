@@ -7,12 +7,12 @@ Dog::Dog()
 	this->brain = new Brain();
 }
 
-Dog::Dog(Dog const &copy): Animal(copy)
+Dog::Dog(const Dog& copy): Animal(copy)
 {
 	this->brain = new Brain(*copy.getBrain());
 }
 
-Dog &Dog::operator=(Dog const &copy)
+Dog &Dog::operator=(const Dog& copy)
 {
 	if (this != &copy)
 	{
