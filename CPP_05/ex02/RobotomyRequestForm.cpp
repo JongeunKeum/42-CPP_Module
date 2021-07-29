@@ -20,10 +20,10 @@ std::string const & RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	if (executor.getGrade() > this->getSignGrade() || executor.getGrade() > this->getExecGrade())
-		throw GradeTooLowException();
-	else if (this->getSigned() == false)
+	if (this->getSigned() == false)
 		throw NotSignedException();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw GradeTooLowException();
 	std::cout << "drrrrrrrr... drrrrrrrr..." << std::endl;
 	if (std::rand() % 2 == 0)
 		std::cout << this->target << " has been robotomized successfully 50\% of the time." << std::endl;

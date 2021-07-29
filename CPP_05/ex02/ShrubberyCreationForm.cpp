@@ -20,10 +20,10 @@ std::string const & ShrubberyCreationForm::getTarget() const {
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (executor.getGrade() > this->getSignGrade() || executor.getGrade() > this->getExecGrade())
-		throw GradeTooLowException();
-	else if (this->getSigned() == false)
+	if (this->getSigned() == false)
 		throw NotSignedException();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw GradeTooLowException();
 	std::ifstream inputFile("AsciiTree");
 	std::ofstream file(this->target + "_shrubbery");
 	std::string line;

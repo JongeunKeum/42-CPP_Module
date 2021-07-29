@@ -20,10 +20,6 @@ std::string const & RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	// if (executor.getGrade() > this->getExecGrade())
-	// 	throw GradeTooLowException();
-	// else if (this->getSigned() == false)
-	// 	throw NotSignedException();
 	if (this->getSigned() == false)
 		throw NotSignedException();
 	else if (executor.getGrade() > this->getExecGrade())
