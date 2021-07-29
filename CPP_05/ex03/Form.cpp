@@ -1,7 +1,7 @@
 #include "Form.hpp"
 
 Form::Form(std::string _name, bool _isSigned, int _sign, int _exec): name(_name), signGrade(_sign), execGrade(_exec) {
-	_isSigned = false;
+	this->isSigned = _isSigned;
 }
 
 Form::Form(const Form& copy): name(copy.getName()), signGrade(copy.getSignGrade()), execGrade(copy.getExecGrade()) {
