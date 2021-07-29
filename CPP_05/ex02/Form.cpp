@@ -36,8 +36,6 @@ void Form::setSigned(bool is) {
 void Form::beSigned(Bureaucrat& b) {
 	if (b.getGrade() > this->signGrade)
 		throw GradeTooLowException();
-	else
-		this->setSigned(true);
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
