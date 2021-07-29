@@ -51,6 +51,6 @@ int main()
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	system("leaks Bureaucrat");
+	system("leaks intern");
 	return 0;
 }
