@@ -26,9 +26,10 @@ Form* Intern::makePresidential(std::string form, std::string target) {
 
 Form* Intern::makeForm(std::string form, std::string target) {
 	Form* formFunc = NULL;
-	Form* (Intern::*formFuncArray[3])(std::string form, std::string target) {
-		&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePresidential
-	};
+	Form* (Intern::*formFuncArray[3])(std::string form, std::string target);
+	formFuncArray[0] = &Intern::makeShrubbery;
+	formFuncArray[1] = &Intern::makeRobotomy;
+	formFuncArray[2] = &Intern::makePresidential;
 	(!form.compare("Shrubbery Creation Form") && (formFunc = (this->*(formFuncArray[0]))(form, target)));
 	(!form.compare("Robotomy Request Form") && (formFunc = (this->*(formFuncArray[1]))(form, target)));
 	(!form.compare("Presidential Pardon Form") && (formFunc = (this->*(formFuncArray[2]))(form, target)));

@@ -4,12 +4,12 @@ Form::Form(std::string _name, bool _isSigned, int _sign, int _exec): name(_name)
 	_isSigned = false;
 }
 
-Form::Form(const Form& copy): name(copy.name), signGrade(copy.signGrade), execGrade(copy.execGrade) {
+Form::Form(const Form& copy): name(copy.getName()), signGrade(copy.getSignGrade()), execGrade(copy.getExecGrade()) {
 	*this = copy;
 }
 
 Form& Form::operator=(const Form& copy) {
-	this->isSigned = copy.isSigned;
+	this->isSigned = copy.getSigned();
 	return *this;
 }
 
@@ -46,9 +46,13 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return "The grade is too low.";
 }
 
+const char* Form::NotSignedException::what() const throw() {
+	return "The form is not signed.";
+}
+
 std::ostream& operator<<(std::ostream& out, const Form& src) {
 	out << src.getName() << ", Sign Grade is " << src.getSignGrade() << ", Execute Grade is " << src.getExecGrade();
-	if (src.getSigned())
+	if (src.getSigned() == true)
 		out << ", is signed" << std::endl;
 	else
 		out << ", is not signed" << std::endl;

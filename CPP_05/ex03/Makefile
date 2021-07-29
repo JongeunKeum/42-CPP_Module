@@ -1,4 +1,4 @@
-NAME = forms
+NAME = intern
 
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
@@ -10,7 +10,8 @@ SRCS =	main.cpp		\
 		Form.cpp		\
 		PresidentialPardonForm.cpp	\
 		RobotomyRequestForm.cpp		\
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp	\
+		Intern.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
