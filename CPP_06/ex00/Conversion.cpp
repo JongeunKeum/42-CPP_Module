@@ -71,8 +71,8 @@ void Conversion::printInt(int& i) {
 	else
 		std::cout << static_cast<char>(i) << std::endl;
 	std::cout << "int\t: " << i << std::endl;
-	std::cout << "float\t: " << static_cast<float>(i) << "f" << std::endl;
-	std::cout << "double\t: " << static_cast<double>(i) << std::endl;
+	std::cout << "float\t: " << static_cast<float>(i) << ".0f" << std::endl;
+	std::cout << "double\t: " << static_cast<double>(i) << ".0" << std::endl;
 }
 
 void Conversion::printFloat(float& f) {
