@@ -27,7 +27,7 @@ public:
 	void printInt(long& i);
 	void printFloat(float& f);
 	void printDouble(double& d);
-	void printStr(char* str);
+	void printStr();
 	void convert();
 };
 

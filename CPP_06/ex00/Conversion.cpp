@@ -131,7 +131,7 @@ void Conversion::printDouble(double& d) {
 		std::cout << std::endl;
 }
 
-void Conversion::printStr(char* str) {
+void Conversion::printStr() {
 	std::cout << "char\t: impossible" << std::endl;
 	std::cout << "int\t: impossible" << std::endl;
 	std::cout << "float\t: impossible" << std::endl;
@@ -158,5 +158,5 @@ void Conversion::convert() {
 		printDouble(d);
 	}
 	else
-		printStr(this->str);
+		printStr();
 }
