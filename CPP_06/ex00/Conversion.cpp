@@ -70,7 +70,11 @@ void Conversion::printInt(int& i) {
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << static_cast<char>(i) << std::endl;
-	std::cout << "int\t: " << i << std::endl;
+	std::cout << "int\t: ";
+	if (i < std::numeric_limits<int>::min() || i > std::numeric_limits<int>::max())
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << i << std::endl;
 	std::cout << "float\t: " << static_cast<float>(i) << ".0f" << std::endl;
 	std::cout << "double\t: " << static_cast<double>(i) << ".0" << std::endl;
 }

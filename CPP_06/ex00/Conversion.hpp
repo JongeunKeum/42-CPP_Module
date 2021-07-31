@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <cstring>
+# include <limits>
 
 # define IS_CHAR 0
 # define IS_INT 1
