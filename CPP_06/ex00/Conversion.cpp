@@ -18,7 +18,8 @@ char* Conversion::getStr() {
 }
 
 int Conversion::checkType() {
-	int i = 0;
+	for (int i = 0; this->str[i]; i++)
+		this->str[i] = tolower(this->str[i]);
 	if (strlen(this->str) == 0)
 		return IS_STR;
 	else if (strlen(this->str) == 1 && !isdigit(this->str[0]))
@@ -27,6 +28,7 @@ int Conversion::checkType() {
 		return IS_FLOAT;
 	else if (!strcmp(this->str, "nan") || !strcmp(this->str, "inf") || !strcmp(this->str, "+inf") || !strcmp(this->str, "-inf"))
 		return IS_DOUBLE;
+	int i = 0;
 	if (this->str[i] == '+' || this->str[i] == '-')
 		i++;
 	while (isdigit(this->str[i]))
@@ -50,47 +52,79 @@ int Conversion::checkType() {
 }
 
 void Conversion::printChar(char& c) {
+	std::cout << "------char------" << std::endl;
 	std::cout << "char\t: ";
 	if (isprint(c) == 0)
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << c << std::endl;
 	std::cout << "int\t: " << static_cast<int>(c) << std::endl;
-	std::cout << "float\t: " << static_cast<float>(c) << std::endl;
+	std::cout << "float\t: " << static_cast<float>(c) << "f" << std::endl;
 	std::cout << "double\t: " << static_cast<double>(c) << std::endl;
 }
 
 void Conversion::printInt(int& i) {
+	std::cout << "------int------" << std::endl;
 	std::cout << "char\t: ";
 	if (isprint(i) == 0)
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << static_cast<char>(i) << std::endl;
 	std::cout << "int\t: " << i << std::endl;
-	std::cout << "float\t: " << static_cast<float>(i) << std::endl;
+	std::cout << "float\t: " << static_cast<float>(i) << "f" << std::endl;
 	std::cout << "double\t: " << static_cast<double>(i) << std::endl;
 }
 
 void Conversion::printFloat(float& f) {
+	std::cout << "------float------" << std::endl;
 	std::cout << "char\t: ";
-	if (isprint(f) == 0)
+	if (isnan(f) || isinf(f))
+		std::cout << "impossible" << std::endl;
+	else if (isprint(f) == 0)
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << static_cast<char>(f) << std::endl;
-	std::cout << "int\t: " << static_cast<int>(f) << std::endl;
-	std::cout << "float\t: " << f << std::endl;
+	std::cout << "int\t: ";
+	if (isnan(f) || isinf(f))
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(f) << std::endl;
+	std::cout << "float\t: " << f;
+	if (f - static_cast<int>(f) == 0)
+		std::cout << ".0f" << std::endl;
+	else
+		std::cout << "f" << std::endl;
 	std::cout << "double\t: " << static_cast<double>(f) << std::endl;
+	if (f - static_cast<int>(f) == 0)
+		std::cout << ".0" << std::endl;
+	else
+		std::cout << std::endl;
 }
 
 void Conversion::printDouble(double& d) {
+	std::cout << "------double------" << std::endl;
 	std::cout << "char\t: ";
-	if (isprint(d) == 0)
+	if (isnan(d) || isinf(d))
+		std::cout << "impossible" << std::endl;
+	else if (isprint(d) == 0)
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << static_cast<char>(d) << std::endl;
-	std::cout << "int\t: " << static_cast<int>(d) << std::endl;
-	std::cout << "float\t: " << static_cast<float>(d) << std::endl;
-	std::cout << "double\t: " << d << std::endl;
+	std::cout << "int\t: ";
+	if (isnan(d) || isinf(d))
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(d) << std::endl;
+	std::cout << "float\t: " << static_cast<float>(d) << "f" << std::endl;
+	if (d - static_cast<int>(d) == 0)
+		std::cout << ".0f" << std::endl;
+	else
+		std::cout << "f" << std::endl;
+	std::cout << "double\t: " << d;
+	if (d - static_cast<int>(d) == 0)
+		std::cout << ".0" << std::endl;
+	else
+		std::cout << std::endl;
 }
 
 // void Conversion::printStr(std::string& str) {
@@ -102,28 +136,21 @@ void Conversion::printDouble(double& d) {
 
 void Conversion::convert() {
 	int type = checkType();
-	char c = this->str[0];
-	int i = atoi(this->str);
-	float f = atof(this->str);
-	char* endPtr;
-	double d = strtod(this->str, &endPtr);
-	switch (type)
-	{
-	case IS_CHAR:
+	if (type == IS_CHAR) {
+		char c = this->str[0];
 		printChar(c);
-		break;
-	case IS_INT:
+	}
+	else if (type == IS_INT) {
+		int i = atoi(this->str);
 		printInt(i);
-		break;
-	case IS_FLOAT:
+	}
+	else if (type == IS_FLOAT) {
+		float f = atof(this->str);
 		printFloat(f);
-		break;
-	case IS_DOUBLE:
+	}
+	else if (type == IS_DOUBLE) {
+		char* endPtr;
+		double d = strtod(this->str, &endPtr);
 		printDouble(d);
-		break;
-	// case IS_STR:
-	// 	std::string string = this->str;
-	// 	printStr(string);
-	// 	break;
 	}
 }
