@@ -63,7 +63,7 @@ void Conversion::printChar(char& c) {
 	std::cout << "double\t: " << static_cast<double>(c) << ".0" << std::endl;
 }
 
-void Conversion::printInt(int& i) {
+void Conversion::printInt(long& i) {
 	std::cout << "------int------" << std::endl;
 	std::cout << "char\t: ";
 	if (isprint(i) == 0)
@@ -131,12 +131,12 @@ void Conversion::printDouble(double& d) {
 		std::cout << std::endl;
 }
 
-// void Conversion::printStr(std::string& str) {
-// 	std::cout << "char\t: impossible" << std::endl;
-// 	std::cout << "int\t: impossible" << std::endl;
-// 	std::cout << "float\t: ";
-// 	if (str == "nanf" || str == "-inff" || str == "+inff")
-// }
+void Conversion::printStr(char* str) {
+	std::cout << "char\t: impossible" << std::endl;
+	std::cout << "int\t: impossible" << std::endl;
+	std::cout << "float\t: impossible" << std::endl;
+	std::cout << "double\t: impossible" << std::endl;
+}
 
 void Conversion::convert() {
 	int type = checkType();
@@ -145,7 +145,7 @@ void Conversion::convert() {
 		printChar(c);
 	}
 	else if (type == IS_INT) {
-		int i = atoi(this->str);
+		long i = atoi(this->str);
 		printInt(i);
 	}
 	else if (type == IS_FLOAT) {
@@ -157,4 +157,6 @@ void Conversion::convert() {
 		double d = strtod(this->str, &endPtr);
 		printDouble(d);
 	}
+	else
+		printStr(this->str);
 }

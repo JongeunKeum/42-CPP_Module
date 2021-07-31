@@ -11,10 +11,6 @@
 # define IS_DOUBLE 3
 # define IS_STR 4
 
-// # define NAN 0/0.0
-// # define POS_INF 1/0.0
-// # define NEG_INF -1/0.0
-
 class Conversion
 {
 private:
@@ -28,10 +24,10 @@ public:
 	char* getStr();
 	int checkType();
 	void printChar(char& c);
-	void printInt(int& i);
+	void printInt(long& i);
 	void printFloat(float& f);
 	void printDouble(double& d);
-	void printStr(std::string& str);
+	void printStr(char* str);
 	void convert();
 };
 
