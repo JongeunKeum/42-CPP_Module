@@ -1,4 +1,4 @@
-NAME = scalar
+NAME = convert
 
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
