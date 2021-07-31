@@ -14,10 +14,6 @@ class Conversion
 {
 private:
 	char* str;
-	char c;
-	int i;
-	float f;
-	double d;
 public:
 	Conversion() {}
 	Conversion(char* str);
@@ -26,11 +22,11 @@ public:
 	~Conversion() {}
 	char* getStr();
 	int checkType();
-	void printChar();
-	void printInt();
-	void printFloat();
-	void printDouble();
-	void callPrintFunc();
+	void printChar(char& c);
+	void printInt(int& i);
+	void printFloat(float& f);
+	void printDouble(double& d);
+	void printStr(std::string& str);
 	void convert();
 };
 

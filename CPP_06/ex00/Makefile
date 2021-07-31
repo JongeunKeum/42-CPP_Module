@@ -5,7 +5,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 OBJS_DIR = ./objs
 
-SRCS =	main.cpp
+SRCS =	main.cpp	\
+		Conversion.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
