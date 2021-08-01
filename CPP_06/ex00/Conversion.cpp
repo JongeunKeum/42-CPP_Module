@@ -145,7 +145,7 @@ void Conversion::convert() {
 		printChar(c);
 	}
 	else if (type == IS_INT) {
-		long i = atoi(this->str);
+		long i = atol(this->str);
 		printInt(i);
 	}
 	else if (type == IS_FLOAT) {

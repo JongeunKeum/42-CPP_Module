@@ -3,7 +3,9 @@
 
 # include <iostream>
 # include <cstring>
+# include <math.h>
 # include <limits>
+# include <cerrno>
 
 # define IS_CHAR 0
 # define IS_INT 1
