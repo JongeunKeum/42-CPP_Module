@@ -98,7 +98,7 @@ void Conversion::printFloat(float& f) {
 		std::cout << ".0f" << std::endl;
 	else
 		std::cout << "f" << std::endl;
-	std::cout << "double\t: " << static_cast<double>(f) << std::endl;
+	std::cout << "double\t: " << static_cast<double>(f);
 	if (f - static_cast<int>(f) == 0)
 		std::cout << ".0" << std::endl;
 	else
@@ -119,7 +119,7 @@ void Conversion::printDouble(double& d) {
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(d) << std::endl;
-	std::cout << "float\t: " << static_cast<float>(d) << "f" << std::endl;
+	std::cout << "float\t: " << static_cast<float>(d);
 	if (d - static_cast<int>(d) == 0)
 		std::cout << ".0f" << std::endl;
 	else
