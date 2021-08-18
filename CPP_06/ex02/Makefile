@@ -1,7 +1,7 @@
 NAME = dynamic
 
 CC = clang++
-# CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS_DIR = ./objs
 
