@@ -20,8 +20,8 @@ int main( void ) {
 	Awesome e(10);
 	Awesome f(20);
 	::swap( e, f );
-	std::cout << "e = " << e.getN() << ", f = " << f.getN() << std::endl;
-	std::cout << "min( e, f ) = " << ::min( e, f ).getN() << std::endl;
-	std::cout << "max( e, f ) = " << ::max( e, f ).getN() << std::endl;
+	std::cout << "e = " << e << ", f = " << f << std::endl;
+	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
+	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
 	return 0;
 }

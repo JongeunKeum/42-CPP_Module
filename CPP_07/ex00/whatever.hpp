@@ -29,6 +29,7 @@ T max(T a, T b) {
 /* ***** Evaluation Code ***** */
 class Awesome {
 public:
+	Awesome(void) : _n(0) {}
 	Awesome( int n ) : _n( n ) {}
 	bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
 	bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
@@ -40,5 +41,9 @@ public:
 private:
 	int _n;
 };
+std::ostream& operator<<(std::ostream& o, const Awesome& a) {
+	o << a.getN();
+	return o;
+}
 
 #endif
