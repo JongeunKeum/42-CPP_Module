@@ -10,7 +10,7 @@ private:
 	T* arr_;
 	unsigned int n_;
 public:
-	Array() { this->arr_ = new T[]; this->n_ = 0; }
+	Array() { this->arr_ = new T[0]; this->n_ = 0; }
 	Array(unsigned int n) { this->arr_ = new T[n]; this->n_ = n; }
 	Array(const Array& copy) {
 		this->n_ = copy.n_;
@@ -28,14 +28,18 @@ public:
 		}
 		return *this;
 	}
-	T& operator[](const unsigned int idx) {
-		if (idx >= this->n_)
-			throw std::exception;
+	T& operator[](long long idx) {
+		if (idx >= this->n_ || idx < 0)
+			throw (std::out_of_range("Index Out of Range!!"));
 		return this->arr_[idx];
 	}
-	// const T& operator[](const int idx) const;
-	unsigned int size(void) { return this->n_; }
-	~Array() { if (this->n_) delete[] this->arr; }
+	const T& operator[](const long long idx) const {
+		if (idx >= this->n_ || idx < 0)
+			throw (std::out_of_range("Index Out of Range!!"));
+		return this->arr_[idx];
+	}
+	unsigned int size(void) const { return this->n_; }
+	~Array() { delete[] this->arr_; }
 };
 
 #endif
