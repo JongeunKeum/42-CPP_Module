@@ -5,8 +5,19 @@
 int main(int, char **)
 {
 	{
-		Array<char> characters;
-		std::cout << "Empty Array -> size : " << characters.size() << std::endl;
+		{
+			Array<char> characters;
+			std::cout << "Empty Array -> size : " << characters.size() << std::endl;
+		}
+		std::cout << "\n=================" << std::endl;
+		{
+			Array<char> characters(10);
+			for (int i = 0; i < 10; i++)
+			{
+				characters[i] = i + 97;
+				std::cout << "characters[" << i << "] : " << characters[i] << std::endl;
+			}
+		}
 		Array<int> numbers(MAX_VAL);
 		int *mirror = new int[MAX_VAL];
 		srand(time(NULL));
