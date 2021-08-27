@@ -19,6 +19,7 @@ int main() {
 		std::cout << "size :\t" << mstack.size() << std::endl;	// 4
 
 		std::cout << "\nstack => [5, 3, 5, 737]" << std::endl;
+		std::cout << "MutantStack iterator" << std::endl;
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
 		std::cout << "iterator it(begin) :\t" << *it << std::endl;
@@ -31,6 +32,17 @@ int main() {
 		{
 			std::cout << *it << std::endl;
 			++it;
+		}
+
+		std::cout << "\nMutantStack reverse iterator" << std::endl;
+		MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+		MutantStack<int>::reverse_iterator rite = mstack.rend();
+		std::cout << "reverse iterator rit(begin) :\t" << *rit << std::endl;
+		std::cout << "display all elements" << std::endl;
+		while (rit != rite)
+		{
+			std::cout << *rit << std::endl;
+			++rit;
 		}
 
 		std::cout << "\nCopy Constructor" << std::endl;
