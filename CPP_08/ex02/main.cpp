@@ -79,6 +79,6 @@ int main() {
 	std::cout << "stack s top :\t" << s.top() << std::endl;
 	std::cout << "stack s size :\t" << s.size() << std::endl;
 	std::cout << "MutantStack mstack top :\t" << mstack.top() << std::endl;
-		std::cout << "MutantStack mstack size :\t" << mstack.size() << std::endl;
+	std::cout << "MutantStack mstack size :\t" << mstack.size() << std::endl;
 	return 0;
 }

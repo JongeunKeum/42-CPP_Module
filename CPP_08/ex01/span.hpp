@@ -18,10 +18,12 @@ public:
 	~Span() { this->vec_.clear(); }
 	void addNumber(int num);
 	template <typename InputIt>
-	void addNumber(InputIt begin, InputIt end) {
-		if (this->vec_.size() == this->n_)
-			throw (std::length_error("Cannot add more!!!"));
-		this->vec_.insert(this->vec_.end(), begin, end);
+	void addNumber(InputIt begin, InputIt end, unsigned int size) {
+		unsigned int remain = this->n_ - this->vec_.size();
+		if (remain >= size)
+			this->vec_.insert(this->vec_.end(), begin, end);
+		else
+			throw (std::length_error("Cannot add this all!!!"));
 	}
 	int shortestSpan(void);
 	int longestSpan(void);
