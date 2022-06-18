@@ -1,4 +1,4 @@
-#include "span.hpp"
+#include "Span.hpp"
 
 void Span::addNumber(int num) {
 	if (this->vec_.size() == this->n_)
