@@ -11,11 +11,11 @@ private:
 	unsigned int n_;
 	std::vector<int> vec_;
 public:
-	Span() {}
-	Span(unsigned int n) { this->n_ = n; this->vec_.reserve(n); }
-	Span(const Span& copy) { *this = copy; }
-	Span& operator=(const Span& copy) { this->n_ = copy.n_; this->vec_.clear(); this->vec_ = copy.vec_; return *this; }
-	~Span() { this->vec_.clear(); }
+	Span();
+	Span(unsigned int n);
+	Span(const Span& copy);
+	Span& operator=(const Span& copy);
+	~Span();
 	void addNumber(int num);
 	template <typename InputIt>
 	void addNumber(InputIt begin, InputIt end, unsigned int size) {

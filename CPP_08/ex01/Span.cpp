@@ -1,5 +1,15 @@
 #include "Span.hpp"
 
+Span::Span() {}
+
+Span::Span(unsigned int n) { this->n_ = n; this->vec_.reserve(n); }
+
+Span::Span(const Span& copy) { *this = copy; }
+
+Span& Span::operator=(const Span& copy) { this->n_ = copy.n_; this->vec_.clear(); this->vec_ = copy.vec_; return *this; }
+
+Span::~Span() { this->vec_.clear(); }
+
 void Span::addNumber(int num) {
 	if (this->vec_.size() == this->n_)
 		throw (std::length_error("Cannot add more!!!"));

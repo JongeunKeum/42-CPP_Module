@@ -40,7 +40,6 @@ int main() {
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	std::cout << "iterator it(begin) :\t" << *it << std::endl;
-	
 	std::cout << "display all elements" << std::endl;
 	while (it != ite) {
 		std::cout << *it << std::endl;
